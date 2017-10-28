@@ -3,7 +3,7 @@ class Api::V1::UrlsController < ApplicationController
   require 'open-uri'
 
   def create
-    link = params['link'] || "https://reddit.com"
+    link = params['link'] || "https://dailynews.com"
 
     doc = Nokogiri::HTML(open(link))
     url = Url.find_or_create_by(link: link)
@@ -26,13 +26,13 @@ class Api::V1::UrlsController < ApplicationController
 
   private
 
-    def tags_parse(id, type, tags)
+    def tags_parse(id, element, tags)
       tags.map do |tag|
         content = tag.text.strip
         link = tag.css('a').first['href'] unless tag.css('a').length == 0
 
         if !content.empty?
-          case type
+          case element
             when 'h1'
               H1.find_or_create_by(url_id: id, content: content, link: link )
             when 'h2'
