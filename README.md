@@ -1,24 +1,43 @@
-# README
+<p align="center">
+  <img
+    src="https://user-images.githubusercontent.com/7621982/32139395-10478d60-bc15-11e7-8608-3be6ccd96a1e.png"
+    alt="terminal"
+    width="30" />
+</p>
+<h3 align="center">
+  Scraper
+</h3>
+<p align="center" style="color: #999;">Web Scraper API</p>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<p align="center">
+  <img
+    src=""
+    alt="Scraper Screenshot"
+    width="700" />
+    <br>
+    Scrape any website's H1, H2, H3 and link tags.
+</p>
 
-Things you may want to cover:
+## Getting Started with Scraper
+These instructions will get you a copy of the project up and running on your local machine for development.
 
-* Ruby version
+### Prerequisites
+Things you need to install beforehand:
+* **Rails** - Ruby Framework
 
-* System dependencies
+### Installing
+Open terminal and run the following lines of code to clone and run this project.
 
-* Configuration
+ ```shell
+ $ git clone https://github.com/SeeYouSpaceCowboy/scraper.git
+ $ cd scraper
+ $ bundle install
+ $ rails s
+ ```
+ This project should now be running locally on port `3000`.
 
-* Database creation
+# About
+These instructions are a small documentation of the how the API should behave.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Contributors
+Scraper was built by [Mohammed Chisti](http://mohammedchisti.com).
