@@ -29,8 +29,8 @@ Things you need to install beforehand:
 Open terminal and run the following lines of code to clone and run this project.
 
  ```shell
- $ git clone https://github.com/SeeYouSpaceCowboy/scraper.git
- $ cd scraper
+ $ git clone https://github.com/SeeYouSpaceCowboy/api-scraper.git
+ $ cd api-scraper
  $ bundle install
  $ rails s
  ```
