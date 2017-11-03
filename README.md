@@ -72,7 +72,7 @@ Saves H1, H2, H3 and links from a given URL to the database.
   ```
 
   **Content:**
-  ```
+  ```javascript
   [
     {
       "link": "http://dailynews.com",
