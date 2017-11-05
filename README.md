@@ -52,8 +52,35 @@ Saves H1, H2, H3 and links from a given URL to the database.
 **Sample Call:**
 
   ```javascript
-    axios.post('http://localhost:3000/api/v1/urls', { link: 'http://dailynews.com' })
-      .then(response => response)
+    axios.post('http://localhost:3000/v1/urls', { url: 'http://dailynews.com' })
+      .then(response => response.data)
+      .catch(error => error)
+  ```
+
+  **Content:**
+  ```javascript
+  [
+    {
+      "link": "http://dailynews.com",
+      "h1": [
+        {
+            "content": "Passenger dies after car crash in North Hollywood",
+            "link": "http://www.dailynews.com/2017/10/27/1-in-critical-condition-after-car-crash-in-north-hollywood/"
+        },
+        ...
+      ],
+      "h2": [
+        {
+            "content": "LA Metro security guards attacked near Watts station; one shot at with his own gun",
+            "link": "http://www.dailynews.com/2017/10/27/la-metro-security-guards-attacked-near-watts-station-one-shot-at-with-his-own-gun/"
+        },
+        ...
+      ],
+      "h3": [ ... ],
+      "a": [ ... ]
+    },
+    ...
+  ]
   ```
 
 ### Get All H1, H2, H3 and Links
@@ -67,8 +94,9 @@ Saves H1, H2, H3 and links from a given URL to the database.
   **Sample Call:**
 
   ```javascript
-    axios.get('http://localhost:3000/api/v1/urls')
-      .then(response => response)
+    axios.get('http://localhost:3000/v1/urls')
+      .then(response => response.data)
+      .cathc(error => error)
   ```
 
   **Content:**
