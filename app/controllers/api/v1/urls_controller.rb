@@ -3,7 +3,7 @@ class Api::V1::UrlsController < ApplicationController
   require 'open-uri'
 
   def create
-    link = params['link'] || "https://dailynews.com"
+    link = params['url'] || "https://dailynews.com"
 
     doc = Nokogiri::HTML(open(link))
     url = Url.find_or_create_by(link: link)
@@ -17,6 +17,9 @@ class Api::V1::UrlsController < ApplicationController
     h2_items = tags_parse(url.id, 'h2', h2_tags).compact
     h3_items = tags_parse(url.id, 'h3', h3_tags).compact
     a_items = tags_parse(url.id, 'a', a_tags).compact
+
+    urls = Url.all
+    render json: urls, status: 200
   end
 
   def index
